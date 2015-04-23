@@ -20,13 +20,21 @@ class Calculator {
 
 object scalaPractice {
 	 def main(args: Array[String]) {
-	 	val first = args(0).toInt
-	 	val second = args(1).toInt
+	 	println("1 for add, 2 for sub, 3 for mul, 4 for divide, 5 for modulus")
+	 	println("Enter your choice :  ")
+	 	val choice = readInt()
+	 	println("Enter first number :  ")
+	 	val first = readInt()
+	 	println("Enter second number :  ")
+	 	val second = readInt()
 	 	val calculator = new Calculator()
-	 	println("addition "+ calculator.add(first, second))
-	 	println("addition "+ calculator.subtract(first, second))
-	 	println("multiply "+ calculator.multiply(first, second))
-	 	println("divide "+ calculator.divide(first, second))
-	 	println("modulus "+ calculator.modulus(first, second))
+	 	choice match {
+	 		case 1 => println("addition "+ calculator.add(first, second)) 
+	 		case 2 => println("addition "+ calculator.subtract(first, second)) 
+	 		case 3 => println("multiply "+ calculator.multiply(first, second)) 
+	 		case 4 => println("divide "+ calculator.divide(first, second)) 
+	 		case 5 => println("modulus "+ calculator.modulus(first, second)) 
+	 		case whoa => println("Invalid input")
+	 	}
 	 }
 }
