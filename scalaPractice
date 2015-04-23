@@ -1,0 +1,32 @@
+import java.io._
+
+class Calculator {
+	def add(x : Int, y : Int) : Int = {
+		x + y
+	}
+	def subtract(x : Int, y : Int) : Int = {
+		x - y
+	}
+	def multiply(x : Int, y : Int) : Int = {
+		x * y
+	}
+	def divide(x : Int, y : Int) : Int = {
+		x / y
+	}
+	def modulus(x : Int, y : Int) : Int = {
+		x % y
+	}
+}
+
+object scalaPractice {
+	 def main(args: Array[String]) {
+	 	val first = args(0).toInt
+	 	val second = args(1).toInt
+	 	val calculator = new Calculator()
+	 	println("addition "+ calculator.add(first, second))
+	 	println("addition "+ calculator.subtract(first, second))
+	 	println("multiply "+ calculator.multiply(first, second))
+	 	println("divide "+ calculator.divide(first, second))
+	 	println("modulus "+ calculator.modulus(first, second))
+	 }
+}
