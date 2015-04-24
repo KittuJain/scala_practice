@@ -1,0 +1,32 @@
+class AtmCalculation{
+	def getNoteSeries(notes : Array[Int], amount : Int) : Array[Int] = {
+		val atmAmounts = new Array[Int](notes.length)
+		var i = 0
+		var amountAskedFor = amount
+		for(i <- 0 to notes.length-1){
+			if(amountAskedFor >= notes(i))
+				atmAmounts(i) = (amountAskedFor/notes(i))
+			else
+				atmAmounts(i) = 0
+			amountAskedFor = amountAskedFor % notes(i);
+		}
+		atmAmounts
+	}
+
+	def printNotesCalculation (notes : Array[Int], atmAmounts : Array[Int]) = {
+		var i = 0
+		for(i <- 0 to notes.length-1)
+			println("notes of "+notes(i)+ " : " + atmAmounts(i));
+	}
+}
+
+object Atm{
+	def main(args: Array[String]): Unit = {
+		print("Enter the amount : ")
+		var amount = readInt()
+		val notes = Array(1000, 500, 100, 50, 20, 10, 5, 2, 1)
+		val atmCalc = new AtmCalculation();
+		val atmAmounts = atmCalc.getNoteSeries(notes, amount)
+		atmCalc.printNotesCalculation(notes, atmAmounts)
+	}
+}

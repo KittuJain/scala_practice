@@ -11,20 +11,14 @@ class Calculator {
 object Calculator {
 	 def main(args: Array[String]) {
 	 	println("1 for add, 2 for sub, 3 for mul, 4 for divide, 5 for modulus")
-	 	println("Enter your choice :  ")
+	 	print("Enter your choice :  ")
 	 	val choice = readInt()
-	 	println("Enter first number :  ")
+	 	print("Enter first number :  ")
 	 	val first = readInt()
-	 	println("Enter second number :  ")
+	 	print("Enter second number :  ")
 	 	val second = readInt()
 	 	val calculator = new Calculator()
-	 	choice match {
-	 		case 1 => println("addition " + calculator.add(first, second)) 
-	 		case 2 => println("subtraction " + calculator.subtract(first, second)) 
-	 		case 3 => println("multiply " + calculator.multiply(first, second)) 
-	 		case 4 => println("divide " + calculator.divide(first, second)) 
-	 		case 5 => println("modulus " + calculator.modulus(first, second)) 
-	 		case whoa => println("Invalid input")
-	 	}
+	 	var operators = List(calculator.add _, calculator.subtract _, calculator.multiply _, calculator.divide _, calculator.modulus _)
+	 	println(operators(choice-1)(first, second));
 	 }
 }
